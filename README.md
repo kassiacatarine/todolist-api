@@ -16,6 +16,9 @@ OBS:
   - Caso essas configurações não sejam feitas irá ocasionar em um erro ao iniciar.
   - O banco de dados será criado em memoria, então toda vez que iniciar a aplicação ele será um novo, caso não queira que a API se conecte ao banco em memoria deixar o campo `DB_IN_MEMORY` como `false` e expecificar a url do seu banco local no campo `DB_URL`.
 
+- Executar o seguinte comando para baixar as bibliotecas da aplicação:
+
+    npm install
 
 ## Execução
 
