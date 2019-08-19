@@ -1,4 +1,4 @@
-# todolist-api
+# Todolist API
 API para um To-Do List em nodejs
 
 ## Configuração de ambiente
