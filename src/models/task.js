@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const VideoSchema = mongoose.Schema({
+const TaskSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,

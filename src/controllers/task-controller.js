@@ -1,4 +1,4 @@
-const Video = require('../models/video');
+const Task = require('../models/task');
 
 exports.new = async (req, res) => {
   try {
@@ -18,7 +18,7 @@ exports.new = async (req, res) => {
       name,
       idUser,
       createAt: new Date(),
-      uploadAt: new Date()
+      updateAt: new Date()
     });
 
     await task.save();
@@ -61,17 +61,17 @@ exports.update = async (req, res) => {
       throw new Error('idUser must be a valid user object.');
     }
 
-    await Task.findByIdAndUpdate(req.params.id, req.body)
+    await Task.findByIdAndUpdate(req.params.id, {name, description, updateAt: new Date()})
 
     res.status(201).json({
-      title: 'Task Successfully Created',
-      detail: 'Successfully created new task',
+      title: 'Task Successfully Updated',
+      detail: 'Successfully updated task',
     });
   } catch (err) {
     res.status(400).json({
       errors: [{
-        title: 'Error Creating Task',
-        detail: 'Something went wrong during creating task process.',
+        title: 'Error Updating Task',
+        detail: 'Something went wrong during updating task process.',
         errorMessage: err.message,
       }],
     });

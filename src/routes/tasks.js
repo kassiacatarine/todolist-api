@@ -5,10 +5,10 @@ const taskController = require('../controllers/task-controller');
 const auth = require('../midlewares/auth');
 
 router
-  .get('/', auth, taskController.tasks)
-  .post('/', auth, taskController.new)
-  .get('/:id', auth, taskController.task)
-  .update('/:id', auth, taskController.update)
-  .delete('/:id', auth, taskController.delete);
+  .get('/', taskController.tasks)
+  .post('/', taskController.new)
+  .get('/:id', taskController.task)
+  .put('/:id', taskController.update)
+  .delete('/:id', taskController.delete);
 
 module.exports = router;
